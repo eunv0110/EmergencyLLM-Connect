@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>응급실 추천 사이트</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #d32f2f;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            margin-top: 60px; /* 네비게이션 바와 겹치지 않도록 아래로 이동 */
+        }
+        main {
+            padding: 20px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px;
+            background-color: #d32f2f;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #b71c1c;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .nav-bar {
+            background-color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            height: 60px; /* 네비게이션 바 높이 지정 */
+        }
+        .nav-bar a {
+            color: black;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="nav-bar">
+    <div class="logo">
+        <a href="/index">
+            <img src="/image/logo.png" alt="응급 추천 시스템 로고" />
+        </a>
+    </div>
+    <div class="links">
+        <a href="/site_introduction">사이트소개</a>
+        <a href="/index">응급상황 입력</a>
+        <a href="/emergency_class">KTAS란?</a>
+    </div>
+</div>
+
+<header>
+    <h1>응급실 추천 사이트</h1>
+    <p>위급한 상황에서 가까운 응급실을 빠르게 찾으세요</p>
+</header>
+
+<main>
+    <section>
+        <div class="content">
+            <h2 class="section-title">응급실 찾기</h2>
+            <p>본 사이트는 위급한 상황에서 환자의 KTAS 등급을 분류하여 KTAS 등급 기반으로 가까운 응급실을 찾을 수 있도록 도와줍니다. 아래 버튼을 클릭하여 위치 기반으로 인근 응급실 목록을 확인해보세요.</p>
+            <a href="https://mini7-spring-aivle1061-b7fvc5g5enh3cvcy.koreacentral-01.azurewebsites.net/index" class="button" target="_self">응급실 찾기</a>
+        </div>
+        <div class="content">
+            <h2 class="section-title">KTAS</h2>
+            <p>본 사이트는 위급한 상황에서 환자의 KTAS 등급을 분류하여 KTAS 등급 기반으로 가까운 응급실을 찾을 수 있도록 도와줍니다.<br> KTAS가 궁금하시다면 아래 마크를 클릭하세요.</p>
+            <a href="https://mini7-spring-aivle1061-b7fvc5g5enh3cvcy.koreacentral-01.azurewebsites.net/emergency_class" class="button" target="_self">KTAS란?</a>
+        </div>
+    </section>
+
+    <section>
+        <div class="content">
+            <h2 class="section-title">응급실 이용 안내</h2>
+            <p>응급실을 방문할 때는 다음과 같은 사항들을 준비해 주세요:</p>
+            <ul>
+                <li>미리 환자의 보험증 및 신분증을 준비하세요.</li>
+                <li>환자의 최근 병력이나 복용 중인 약물 목록을 준비하세요.</li>
+                <li>조금 더 정확한 판단을 위해 전화로 119에 신고 후 전문가의 안내를 받으세요.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <div class="content">
+            <h2 class="section-title">응급처치 방법</h2>
+            <p>응급처치가 필요한 상황에서 당황하지 말고 차분히 아래 절차를 따르세요:</p>
+            <ol>
+                <li>환자의 상태를 확인하고, 의식이 있으면 침착하게 대화하세요.</li>
+                <li>호흡이나 맥박이 없다면 CPR을 시도하세요.</li>
+                <li>119에 전화를 걸어 응급 상황을 알리고, 지시에 따라 행동하세요.</li>
+            </ol>
+        </div>
+    </section>
+</main>
+</body>
+</html>

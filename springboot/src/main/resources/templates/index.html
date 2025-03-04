@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>응급상황 입력</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/base.css">
+
+    <div class="nav-bar">
+        <div class="logo">
+            <a href="/index">
+                <img src="/image/logo.png" alt="응급 추천 시스템 로고" />
+            </a>
+        </div>
+        <div class="links">
+            <a href="/site_introduction">사이트소개</a>
+            <a href="/index">응급상황 입력</a>
+            <a href="/emergency_class">KTAS란?</a>
+        </div>
+    </div>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h1>응급상황과 주소를 입력해주세요</h1>
+    <form action="/recommend_hospital" method="get">
+        <label for="request">상황:</label>
+        <input type="text" id="request" name="request" placeholder="예: 교통사고가 났어요, 머리에 피가 나고 있어요." required>
+
+        <label for="latitude">위도:</label>
+        <input type="number" step="any" id="latitude" name="latitude" placeholder="위치하신 위도를 입력해주세요." required>
+
+        <label for="longitude">경도:</label>
+        <input type="number" step="any" id="longitude" name="longitude" placeholder="위치하신 경도를 입력해주세요." required>
+
+        <label for="hospital_num">추천받을 병원 수:</label>
+        <input type="number" id="hospital_num" name="hospital_num" placeholder="추천받고 싶은 응급실의 개수를 입력해주세요" required>
+
+        <button type="submit">추천받기</button>
+    </form>
+    <p class="info">정확한 정보를 입력해 주세요. 입력된 정보를 바탕으로 가까운 병원을 추천합니다.</p>
+</div>
+</body>
+</html>

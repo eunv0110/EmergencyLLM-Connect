@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- PHP -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>응급상황 입력</title>
+    <link rel="stylesheet" href="/recommend_hospital.css">
+    <link rel="stylesheet" href="/base.css">
+
+    <div class="nav-bar">
+        <div class="logo">
+            <a href="/index">
+                <img src="/image/logo.png" alt="응급 추천 시스템 로고" />
+            </a>
+        </div>
+        <div class="links">
+            <a href="/site_introduction">사이트소개</a>
+            <a href="/index">응급상황 입력</a>
+            <a href="/emergency_class">KTAS란?</a>
+        </div>
+    </div>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>가까운 응급실은 다음과 같습니다</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>병원 이름</th>
+            <th>병원 주소</th>
+            <th>응급실 유형</th>
+            <th>전화번호 1</th>
+            <th>전화번호 2</th>
+            <th>위도</th>
+            <th>경도</th>
+            <th>거리 (km)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- 병원 목록 반복 -->
+        <tr th:each="hospital, iterStat : ${hospitalList}">
+            <td th:text="${iterStat.index + 1}"></td>
+            <td th:text="${hospital.hospitalName}"></td>
+            <td th:text="${hospital.address}"></td>
+            <td th:text="${hospital.emergencyMedicalInstitutionType}"></td>
+            <td th:text="${hospital.phoneNumber1}"></td>
+            <td th:text="${hospital.phoneNumber2}"></td>
+            <td th:text="${hospital.latitude}"></td>
+            <td th:text="${hospital.longitude}"></td>
+            <td th:text="${hospital.distance} + ' km'"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
