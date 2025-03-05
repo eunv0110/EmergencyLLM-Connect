@@ -1,0 +1,358 @@
+# 🚨 응급상황 자동 인식 및 응급실 연계 서비스 포털
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/867b8b2f-6a96-4834-b7d5-edc4426c6772" alt="응급상황 서비스 로고" width="800px" />
+  <br><br>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
+  <img src="https://img.shields.io/badge/Transformers-FF6F00?style=for-the-badge&logo=huggingface&logoColor=white" />
+  <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" />
+  <img src="https://img.shields.io/badge/NAVER_Maps-03C75A?style=for-the-badge&logo=naver&logoColor=white" />
+  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" />
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
+  <img src="https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  <br><br>
+  <p><i>KT AIVLE School AI 트랙 미니프로젝트 7차</i></p>
+</div>
+
+<br>
+
+## 📋 프로젝트 개요
+
+<div align="center">
+  <h3><i>"응급상황 자동 인식부터 응급실 연계 서비스 포털 구축까지"</i></h3>
+</div>
+
+<br>
+
+본 프로젝트는 응급 상황에서 환자의 생명을 구하기 위한 핵심 요소인 '빠른 판단'과 '신속한 이송'을 지원하는 AI 기반 서비스 포털을 개발하는 것을 목표로 합니다. 응급 전화를 통해 접수된 상황을 자동으로 인식하고, 응급 등급을 분류한 후, 환자와 가까운 적절한 응급실을 추천하는 통합 웹 애플리케이션을 구축했습니다.
+
+본 프로젝트는 6차 미니프로젝트에서 개발한 기술을 고도화하여 사용자 친화적인 웹 포털로 발전시킨 것입니다. 사용자는 자신의 응급 상황을 입력하고 현재 위치 정보를 함께 제공하면, 시스템이 KTAS 등급을 분류하고 가까운 응급실을 추천해주는 서비스를 이용할 수 있습니다.
+
+<br>
+
+## ⏰ 프로젝트 기간
+- 2025년 3월 1일 — 2025년 3월 6일 (6일간)
+
+<br>
+
+## 🔍 시스템 구성
+
+본 프로젝트는 다음과 같은 마이크로서비스 구조로 구성되어 있습니다:
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/5411dc67-b0e7-4864-86f6-0b5331face20" alt="시스템 구성도" width="800px" />
+</div>
+<br>
+
+### 📊 마이크로서비스 아키텍처
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/de35fd1d-2062-4262-a39c-872f040e5f4a" alt="마이크로서비스 아키텍처" width="800px" />
+</div>
+<br>
+
+### 주요 컴포넌트:
+
+1. **프론트엔드 (View Template Engine with Spring Boot)**
+   - 사용자 인터페이스 제공
+   - 응급 상황 입력 및 위치 정보 수집
+   - 응급실 추천 결과 표시
+
+2. **백엔드 (Spring Boot + FastAPI)**
+   - 프론트엔드와 AI 모델 서비스 연동
+   - 사용자 요청 처리 및 응답 생성
+   - 로그 기록 및 데이터 관리
+
+3. **AI 모듈 (FastAPI)**
+   - OpenAI Whisper: 음성 인식(STT)
+   - GPT-3.5-turbo: 텍스트 요약 및 키워드 추출
+   - KLUE/BERT: 한국어 응급상황 텍스트 분류
+   - NAVER Maps API: 실시간 도로 거리 및 소요시간 계산
+   - 공공데이터 포털 API: 전국 응급의료기관 정보 조회
+
+4. **데이터베이스**
+   - SQLite3: 로그 및 관리 데이터 저장
+
+5. **인프라스트럭처**
+   - Docker: 컨테이너화 및 배포
+   - Microsoft Azure: 클라우드 웹 서버 환경 제공
+
+<br>
+
+## 🏥 한국 응급환자 중증도 분류 기준 (KTAS)
+<div align="center">
+  <img width="600" alt="KTAS 분류 기준" src="https://github.com/user-attachments/assets/dc6a3e6b-76e7-4d65-810d-37c5f18112b5" />
+</div>
+
+응급환자의 중증도 분류를 위해 한국 응급환자 중증도 분류기준(Korean Triage and Acuity Scale, KTAS)을 활용하였습니다. 이 기준은 보건복지부고시(제2023-287호, 2023.12.28. 시행 2024.1.1)에 의해 규정되어 있습니다.
+
+### 중증도 등급 분류
+
+| 등급 | 분류 | 상태 | 대응 필요성 |
+|-----|-----|------|------------|
+| 1등급 | 소생 | 생명이나 사지가 위험한 상태 | 즉시 처치 필요 |
+| 2등급 | 긴급 | 생명이나 사지가 위험할 가능성이 있는 상태 | 매우 긴급한 처치 필요 |
+| 3등급 | 응급 | 응급 처치가 필요하나 생명이나 사지 위험이 낮은 상태 | 긴급 처치 필요 |
+| 4등급 | 준응급 | 환자 상태가 안정적이며 응급으로 치료할 필요가 낮은 상태 | 비교적 빠른 처치 필요 |
+| 5등급 | 비응급 | 경증 질환 상태 | 긴급하지 않은 처치 가능 |
+
+<br>
+
+## 🛠️ 기술 스택
+
+<div align="center">
+  <table>
+    <tr>
+      <th colspan="2" align="center">분류</th>
+      <th align="center">기술</th>
+      <th align="center">용도</th>
+    </tr>
+    <tr>
+      <td rowspan="3" width="10%">💻</td>
+      <td width="20%"><b>언어</b></td>
+      <td width="25%">Python, Java</td>
+      <td width="45%">백엔드 및 AI 모델 개발</td>
+    </tr>
+    <tr>
+      <td><b>데이터 처리</b></td>
+      <td>Pandas, NumPy</td>
+      <td>데이터프레임 조작 및 전처리</td>
+    </tr>
+    <tr>
+      <td><b>프론트엔드</b></td>
+      <td>HTML, CSS, JavaScript</td>
+      <td>사용자 인터페이스 구현</td>
+    </tr>
+    <tr>
+      <td rowspan="8">🤖</td>
+      <td rowspan="3"><b>프레임워크</b></td>
+      <td>Spring Boot</td>
+      <td>웹 애플리케이션 백엔드 개발</td>
+    </tr>
+    <tr>
+      <td>FastAPI</td>
+      <td>AI 모델 서비스 API 구현</td>
+    </tr>
+    <tr>
+      <td>Thymeleaf</td>
+      <td>서버 사이드 템플릿 엔진</td>
+    </tr>
+    <tr>
+      <td rowspan="2"><b>API</b></td>
+      <td>OpenAI API</td>
+      <td>음성 인식(Whisper) 및 텍스트 요약(GPT)</td>
+    </tr>
+    <tr>
+      <td>NAVER Maps API</td>
+      <td>도로 거리 및 소요 시간 계산</td>
+    </tr>
+    <tr>
+      <td rowspan="3"><b>모델링</b></td>
+      <td>Transformers</td>
+      <td>BERT 모델 로딩 및 파인튜닝</td>
+    </tr>
+    <tr>
+      <td>PyTorch</td>
+      <td>딥러닝 모델 학습</td>
+    </tr>
+    <tr>
+      <td>Scikit-learn</td>
+      <td>데이터 전처리, 모델 평가</td>
+    </tr>
+    <tr>
+      <td rowspan="3">☁️</td>
+      <td rowspan="3"><b>인프라</b></td>
+      <td>Docker</td>
+      <td>컨테이너화 및 배포</td>
+    </tr>
+    <tr>
+      <td>Microsoft Azure</td>
+      <td>클라우드 웹 서버 배포</td>
+    </tr>
+    <tr>
+      <td>SQLite3</td>
+      <td>데이터베이스 관리</td>
+    </tr>
+  </table>
+</div>
+
+<br>
+
+## 💻 주요 기능
+
+### 1. 응급 상황 입력 및 위치 정보 수집
+- 사용자가 응급 상황을 텍스트 또는 음성으로 입력
+- 위도/경도 정보를 통한 현재 위치 파악
+- 추천받을 응급실 개수 조정 가능
+
+### 2. KTAS 기반 응급 등급 분류
+- 입력된 응급 상황 텍스트를 KLUE/BERT 모델로 분석
+- 1~5등급의 KTAS 중증도 분류 자동 수행
+- 응급 등급에 따른 적절한 대응 방법 안내
+
+### 3. 최적 응급실 추천
+- 사용자 위치 기반 가까운 응급실 목록 제공
+- 응급 등급과 거리를 고려한 최적 응급실 추천
+- 응급실 이름, 주소, 유형, 전화번호 등 상세 정보 제공
+
+### 4. 관리자 기능
+- 응급 상황 요청 이력 조회
+- 기간별 로그 데이터 분석
+- 게시판 기능을 통한 사용자 커뮤니케이션
+
+### 5. KTAS 정보 제공
+- KTAS에 대한 상세한 설명과 중요성 안내
+- 등급별 응급 상황 예시 제공
+- 응급 상황 대처 방법 안내
+
+<br>
+
+## 🖥️ 화면 구성
+
+### 메인 화면 (응급상황 입력)
+![메인 화면](https://github.com/user-attachments/assets/main-screen.png)
+- 응급 상황 텍스트 입력 필드
+- 위도/경도 입력 필드
+- 추천받을 병원 수 설정 옵션
+- 직관적인 사용자 인터페이스로 빠른 정보 입력 가능
+
+### KTAS 정보 화면
+![KTAS 화면](https://github.com/user-attachments/assets/ktas-screen.png)
+- KTAS 분류 체계에 대한 상세 설명
+- 각 등급별 특징 및 응급 상황 예시 제공
+- 응급 상황 대처 방법 안내
+- 시각적 요소를 통한 정보 전달
+
+### 응급실 추천 결과 화면
+![추천 결과 화면](https://github.com/user-attachments/assets/result-screen.png)
+- 가까운 응급실 목록 테이블 형식 제공
+- 병원 이름, 주소, 응급실 유형, 전화번호 등 정보 표시
+- 현재 위치로부터의 거리 정보 제공
+- KTAS 등급에 따른 권장 사항 안내
+
+### 사이트 소개 화면
+![사이트 소개 화면](https://github.com/user-attachments/assets/intro-screen.png)
+- 서비스 목적 및 주요 기능 안내
+- 응급실 이용 안내 정보 제공
+- 기본적인 응급처치 방법 설명
+- 사용자 친화적인 디자인
+
+### 관리자 페이지 (개발 완료, 미배포)
+![관리자 페이지](https://github.com/user-attachments/assets/admin-screen.png)
+- 데이터베이스에 저장된 응급실 조회 기록 열람 기능
+- 요청 정보(상황 문자, 위치 정보, 중증도) 조회
+- 추천된 인근 병원 정보(기본 3개) 표시
+- 기간별 검색 및 필터링 기능
+- 로그 데이터 통계 및 분석 대시보드
+
+> **참고**: 관리자 페이지 기능은 개발 완료되었으나, 배포 및 검증 단계에서 시간 제약으로 인해 최종 배포 버전에는 포함되지 않았습니다. 향후 업데이트에서 추가될 예정입니다.
+
+<br>
+
+## 🧪 활용 예시 및 결과
+
+### 응급 상황 시나리오 테스트 (준응급 사례)
+```
+<사용자 입력>
+"머리가 아프고 열이 38도가 넘어요. 오한이 들고 기운이 없어요."
+
+<응급 등급 분류 결과>
+4등급 (준응급 상황)
+
+<응급실 추천 결과>
+"응급상황이 아닌 것으로 판단됩니다. 증상이 악화된다면 응급실로 이동하세요"
+
+1. 강원특별자치도보건소의원: 거리 2.77km
+2. 의료법인인성의료재단상지의원: 거리 3.21km
+3. 연세대학교부속세브란스기독병원: 거리 3.92km
+```
+
+### 응급 상황 시나리오 테스트 (중증 응급 사례)
+```
+<사용자 입력>
+"가슴이 아프고 숨쉬기가 힘들어요. 식은땀이 나고 어지러워요."
+
+<응급 등급 분류 결과>
+1등급 (소생 단계 - 가장 위급한 상황)
+
+<응급실 추천 결과>
+"응급상황인 것으로 판단됩니다. 즉시 응급실로 이동하세요"
+
+1. A종합병원 응급의료센터: 거리 2.2km
+2. B대학병원 응급실: 거리 3.5km
+3. C의료원 응급실: 거리 4.8km
+```
+
+<br>
+
+## 📝 데이터베이스 기능
+
+### 로그 기록 기능
+- 사용자의 응급 상황 입력 정보 저장
+- 위치 데이터(위도/경도) 기록
+- KTAS 등급 분류 결과 저장
+- 추천된 응급실 정보 보관
+- 요청 시간 타임스탬프 관리
+
+### 동적 병원 정보 저장
+- 추천 병원 수에 따른 동적 데이터 구조 지원
+- 최대 10개까지 응급실 정보 저장 가능
+- 병원명, 주소, 전화번호 등 상세 정보 보관
+- 관리자 조회를 위한 데이터베이스 구조 최적화
+
+### 게시판 기능
+- 사용자 커뮤니케이션을 위한 게시판 구현
+- 사용자 ID 및 비밀번호 기반 게시글 관리
+- 게시글 작성, 조회, 삭제 기능 제공
+- 다양한 검색 옵션을 통한 게시글 필터링
+
+<br>
+
+## 📈 향후 개선 방향
+
+1. **UI/UX 개선**
+   - 사용자 위치 자동 감지 기능 추가
+   - 응급실 길찾기 네비게이션 제공
+   - 모바일 앱 개발을 통한 접근성 향상
+
+2. **기능 확장**
+   - 실시간 응급실 병상 정보 연동
+   - 응급 의료진과의 실시간 커뮤니케이션 기능
+   - 사용자 계정 관리 및 응급 연락처 저장 기능
+
+3. **성능 개선**
+   - KTAS 분류 모델의 정확도 향상을 위한 추가 학습
+   - 마이크로서비스 간 통신 최적화
+   - 실시간 교통 상황을 고려한 더 정확한 도착 시간 예측
+
+4. **보안 강화**
+   - 사용자 개인정보 보호 강화
+   - 의료 데이터 암호화 및 안전한 저장
+   - 시스템 접근 권한 관리 개선
+
+<br>
+
+## 👨‍💻 팀원
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><b>구종한</b></td>
+      <td align="center"><b>김예은</b></td>
+      <td align="center"><b>이대희</b></td>
+      <td align="center"><b>정재원</b></td>
+      <td align="center"><b>황유성</b></td>
+      <td align="center"><b>황은비</b></td>
+    </tr>
+  </table>
+</div>
+<br>
+
+---
+
+<div align="center">
+  <p>본 프로젝트는 KT AIVLE School AI 트랙 미니프로젝트 7차로 진행되었습니다.</p>
+  <p>© 2025 KT AIVLE School 6기 AI 트랙 미니프로젝트</p>
+</div>
