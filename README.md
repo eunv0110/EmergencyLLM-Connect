@@ -189,11 +189,10 @@
 * 간편한 위도/경도 입력 필드
 * 사용자 맞춤형 병원 추천 수 설정 옵션
 
----
 
 ### 2️⃣ KTAS 기반 응급 등급 분류
 
-<img width="800" alt="KTAS 정보 화면" src="https://github.com/user-attachments/assets/fd7cebe1-ce71-4d56-bf0f-b77eb0b9811d" />
+<img width="1121" alt="KTAS 정보 화면" src="https://github.com/user-attachments/assets/fd7cebe1-ce71-4d56-bf0f-b77eb0b9811d" />
 
 **주요 기능**
 * KLUE/BERT 모델을 활용한 응급 상황 텍스트 분석
@@ -205,11 +204,10 @@
 * 등급별 응급 상황 예시와 특징 제공
 * 응급 상황 대처 방법 시각화
 
----
 
 ### 3️⃣ 최적 응급실 추천
 
-<img width="800" alt="응급실 추천 결과 화면" src="https://github.com/user-attachments/assets/bd7ab544-8356-4718-8920-4eafc9b02c9f" />
+<img width="1121" alt="응급실 추천 결과 화면" src="https://github.com/user-attachments/assets/bd7ab544-8356-4718-8920-4eafc9b02c9f" />
 
 **주요 기능**
 * 사용자 위치 기반 가까운 응급실 목록 제공
@@ -221,11 +219,10 @@
 * 현재 위치 기준 거리 정보 표시
 * KTAS 등급에 따른 맞춤형 권장 사항
 
----
 
 ### 4️⃣ 서비스 소개 및 응급처치 정보
 
-<img width="800" alt="사이트 소개 화면" src="https://github.com/user-attachments/assets/d8d2daa8-5897-42f0-81a7-727501320e53" />
+<img width="1121" alt="사이트 소개 화면" src="https://github.com/user-attachments/assets/d8d2daa8-5897-42f0-81a7-727501320e53" />
 
 **주요 기능**
 * 서비스 목적 및 핵심 기능 안내
@@ -237,11 +234,10 @@
 * 단계별 서비스 이용 방법 안내
 * 응급 상황 대처 정보 시각화
 
----
 
 ### 5️⃣ 관리자 기능
 
-<img width="800" alt="관리자 페이지" src="https://github.com/user-attachments/assets/b270a985-76f4-4f07-86fd-969429ccbc0f" />
+<img width="1121" alt="관리자 페이지" src="https://github.com/user-attachments/assets/b270a985-76f4-4f07-86fd-969429ccbc0f" />
 
 **주요 기능**
 * 응급 상황 요청 이력 관리
