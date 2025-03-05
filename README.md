@@ -219,7 +219,6 @@
 - 시각적 요소를 통한 정보 전달
 
 ### 응급실 추천 결과 화면
-
 <img width="800" alt="스크린샷 2025-03-05 오후 11 11 46" src="https://github.com/user-attachments/assets/bd7ab544-8356-4718-8920-4eafc9b02c9f" />
 - 가까운 응급실 목록 테이블 형식 제공
 - 병원 이름, 주소, 응급실 유형, 전화번호 등 정보 표시
@@ -227,7 +226,7 @@
 - KTAS 등급에 따른 권장 사항 안내
 
 ### 사이트 소개 화면
-<img width="800" alt="스크린샷 2025-03-05 오후 11 11 46" src="https://github.com/user-attachments/assets/fd7cebe1-ce71-4d56-bf0f-b77eb0b9811d" />
+<img width="800" alt="스크린샷 2025-03-05 오후 11 11 46" src="https://github.com/user-attachments/assets/d8d2daa8-5897-42f0-81a7-727501320e53" />
 - 서비스 목적 및 주요 기능 안내
 - 응급실 이용 안내 정보 제공
 - 기본적인 응급처치 방법 설명
