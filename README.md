@@ -39,17 +39,10 @@
 
 ## 🔍 시스템 구성
 
-본 프로젝트는 다음과 같은 마이크로서비스 구조로 구성되어 있습니다:
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/5411dc67-b0e7-4864-86f6-0b5331face20" alt="시스템 구성도" width="800px" />
-</div>
-<br>
-
 ### 📊 마이크로서비스 아키텍처
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/de35fd1d-2062-4262-a39c-872f040e5f4a" alt="마이크로서비스 아키텍처" width="800px" />
+  <img width="1121" alt="스크린샷 2025-03-05 오후 11 11 46" src="https://github.com/user-attachments/assets/5d2777f9-2e25-46a6-a466-4fe0a7dce694" />
 </div>
 <br>
 
@@ -212,35 +205,36 @@
 ## 🖥️ 화면 구성
 
 ### 메인 화면 (응급상황 입력)
-![메인 화면](https://github.com/user-attachments/assets/main-screen.png)
+<img width="1121" alt="스크린샷 2025-03-05 오후 11 11 46" src="https://github.com/user-attachments/assets/cd1841cd-70d8-4909-9a52-971cac687c90" />
 - 응급 상황 텍스트 입력 필드
 - 위도/경도 입력 필드
 - 추천받을 병원 수 설정 옵션
 - 직관적인 사용자 인터페이스로 빠른 정보 입력 가능
 
 ### KTAS 정보 화면
-![KTAS 화면](https://github.com/user-attachments/assets/ktas-screen.png)
+<img width="800" alt="스크린샷 2025-03-05 오후 11 11 46" src="https://github.com/user-attachments/assets/fd7cebe1-ce71-4d56-bf0f-b77eb0b9811d" />
 - KTAS 분류 체계에 대한 상세 설명
 - 각 등급별 특징 및 응급 상황 예시 제공
 - 응급 상황 대처 방법 안내
 - 시각적 요소를 통한 정보 전달
 
 ### 응급실 추천 결과 화면
-![추천 결과 화면](https://github.com/user-attachments/assets/result-screen.png)
+
+<img width="800" alt="스크린샷 2025-03-05 오후 11 11 46" src="https://github.com/user-attachments/assets/bd7ab544-8356-4718-8920-4eafc9b02c9f" />
 - 가까운 응급실 목록 테이블 형식 제공
 - 병원 이름, 주소, 응급실 유형, 전화번호 등 정보 표시
 - 현재 위치로부터의 거리 정보 제공
 - KTAS 등급에 따른 권장 사항 안내
 
 ### 사이트 소개 화면
-![사이트 소개 화면](https://github.com/user-attachments/assets/intro-screen.png)
+<img width="800" alt="스크린샷 2025-03-05 오후 11 11 46" src="https://github.com/user-attachments/assets/fd7cebe1-ce71-4d56-bf0f-b77eb0b9811d" />
 - 서비스 목적 및 주요 기능 안내
 - 응급실 이용 안내 정보 제공
 - 기본적인 응급처치 방법 설명
 - 사용자 친화적인 디자인
 
 ### 관리자 페이지 (개발 완료, 미배포)
-![관리자 페이지](https://github.com/user-attachments/assets/admin-screen.png)
+<img width="800" alt="스크린샷 2025-03-05 오후 11 11 46" src="https://github.com/user-attachments/assets/b270a985-76f4-4f07-86fd-969429ccbc0f" />
 - 데이터베이스에 저장된 응급실 조회 기록 열람 기능
 - 요청 정보(상황 문자, 위치 정보, 중증도) 조회
 - 추천된 인근 병원 정보(기본 3개) 표시
