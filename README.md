@@ -14,7 +14,6 @@
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
   <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" />
   <br><br>
-  <p><i>KT AIVLE School AI 트랙 미니프로젝트 7차</i></p>
 </div>
 
 <br>
@@ -367,9 +366,3 @@
 </div>
 <br>
 
----
-
-<div align="center">
-  <p>본 프로젝트는 KT AIVLE School AI 트랙 미니프로젝트 7차로 진행되었습니다.</p>
-  <p>© 2024 KT AIVLE School 6기 AI 트랙 미니프로젝트</p>
-</div>
